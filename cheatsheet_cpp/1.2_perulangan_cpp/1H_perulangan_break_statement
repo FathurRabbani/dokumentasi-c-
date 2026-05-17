@@ -1,0 +1,18 @@
+#include <iostream>
+
+int main()
+{
+    int password, times = 0;
+    while (password != 1234)
+    {
+        if (times++ >= 3)
+        {
+            std::cout << "Locked!\n";
+            break;
+        }
+        std::cout << "Password: ";
+        std::cin >> password; // input
+    }
+
+    return 0;
+}
