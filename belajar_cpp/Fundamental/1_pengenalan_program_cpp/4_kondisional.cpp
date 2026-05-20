@@ -4,6 +4,7 @@ int main()
 {
     int nilaiA = 5, nilaiB = 10;
     
+    
     if(nilaiA == 5){
         std::swap(nilaiA, nilaiB);
     }

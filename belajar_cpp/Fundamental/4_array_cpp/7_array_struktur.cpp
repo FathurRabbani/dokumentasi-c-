@@ -15,6 +15,8 @@ using kontak = struct{
     std::string nomor;
 };
 
+void output();
+
 int main(){
     // jumlah daftar kontak
     kontak daftar[100];
@@ -25,23 +27,35 @@ int main(){
     std::cout << std::endl;
 
     // prosses input menggunakan getline dan loop
-    for(auto range {0}; range < indeks; range++){
+    for(int loops {0}; loops < indeks; loops++){
         std::cin.ignore();
-        std::cout << "DATA KE-" << range + 1 << std::endl;
+        std::cout << "DATA KE-" << loops + 1 << std::endl;
         std::cout << "Nama \t: ";
-        getline(std::cin, daftar[range].nama);
+        getline(std::cin, daftar[loops].nama);
         std::cout << "Alamat \t: ";
-        getline(std::cin, daftar[range].alamat);
+        getline(std::cin, daftar[loops].alamat);
         std::cout<< "Nomor HP \t: ";
-        getline(std::cin, daftar[range].nomor);
+        getline(std::cin, daftar[loops].nomor);
+        std::cout<<"klik enter untuk lanjut input...";
     }
 
+    std::cout << "\nData yang dimasukan: " << std::endl;
+
+    output();
     // menampilkan output dengan loop
     for(auto range {0}; range < indeks; range++){
         std::cout << std::setw(9) << daftar[range].nama << "|";
         std::cout << std::setw(20) << daftar[range].alamat << "|";
         std::cout << std::setw(12) << daftar[range].nomor << "|";
+        std::cout << std::endl;
     }
     
     return 0;
+}
+
+void output(){
+    std::cout << std::setw(9) << "Nama" << "|";
+    std::cout << std::setw(20) << "Alamat" << "|";
+    std::cout << std::setw(12) << "Nomor"<< "|";
+    std::cout << std::endl;
 }
